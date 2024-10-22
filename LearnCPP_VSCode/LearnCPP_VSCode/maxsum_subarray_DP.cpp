@@ -41,7 +41,7 @@ void maxSubArraySum(const std::vector<int>& nums) {
     std::cout << "]" << std::endl;
 }
 
-int main() {
+int vhivdsnkds () {
     std::vector<int> nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4 }; // Example input
     maxSubArraySum(nums);
     return 0;
