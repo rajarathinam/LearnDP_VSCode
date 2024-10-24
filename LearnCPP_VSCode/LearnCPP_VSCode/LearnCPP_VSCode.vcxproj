@@ -129,10 +129,12 @@
   <ItemGroup>
     <ClCompile Include="0_1_knapsackproblem.cpp" />
     <ClCompile Include="ClimbingStais_DP_O(1).cpp" />
+    <ClCompile Include="egg_dropping_problem_DP.cpp" />
     <ClCompile Include="LCS_DP.cpp" />
     <ClCompile Include="longest_common_substring_DP.cpp" />
     <ClCompile Include="maxsum_subarray_DP.cpp" />
     <ClCompile Include="nth_fibonaccinumber_DP.cpp" />
+    <ClCompile Include="subsetsum.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ATMEvents.h" />

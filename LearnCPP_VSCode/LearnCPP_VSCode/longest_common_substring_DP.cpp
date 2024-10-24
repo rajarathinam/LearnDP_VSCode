@@ -2,8 +2,9 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <set>
 
-std::pair<int, std::string> longestCommonSubstring(const std::string& s1, const std::string& s2) {
+std::pair<int, std::set<std::string>> longestCommonSubstrings(const std::string& s1, const std::string& s2) {
     int n = s1.size();
     int m = s2.size();
 
@@ -11,7 +12,7 @@ std::pair<int, std::string> longestCommonSubstring(const std::string& s1, const 
     std::vector<std::vector<int>> dp(n + 1, std::vector<int>(m + 1, 0));
 
     int maxLength = 0;  // To store the maximum length of common substring
-    int endIndex = 0;   // To store the ending index of the longest common substring in s1
+    std::set<std::string> substrings;  // To store all longest common substrings
 
     // Build the DP table
     for (int i = 1; i <= n; ++i) {
@@ -22,7 +23,11 @@ std::pair<int, std::string> longestCommonSubstring(const std::string& s1, const 
                 // Check if this is the longest common substring so far
                 if (dp[i][j] > maxLength) {
                     maxLength = dp[i][j];
-                    endIndex = i;  // Update the end index of the longest substring
+                    substrings.clear();  // Clear previous substrings
+                    substrings.insert(s1.substr(i - maxLength, maxLength));  // Add new longest substring
+                }
+                else if (dp[i][j] == maxLength) {
+                    substrings.insert(s1.substr(i - maxLength, maxLength));  // Add other substrings of the same length
                 }
             }
             else {
@@ -31,23 +36,24 @@ std::pair<int, std::string> longestCommonSubstring(const std::string& s1, const 
         }
     }
 
-    // Extract the longest common substring
-    std::string longestSubstring = s1.substr(endIndex - maxLength, maxLength);
-
-    return { maxLength, longestSubstring };
+    return { maxLength, substrings };
 }
 
-int main() {
+int smlsmls() {
     // Example strings
     std::string s1 = "abcdxyz";
     std::string s2 = "xyzabcd";
 
-    // Find the length and the actual longest common substring
-    auto result = longestCommonSubstring(s1, s2);
+    // Find the length and all longest common substrings
+    auto result = longestCommonSubstrings(s1, s2);
 
     // Output the result
     std::cout << "Length of Longest Common Substring: " << result.first << std::endl;
-    std::cout << "Longest Common Substring: " << result.second << std::endl;
+    std::cout << "All Longest Common Substrings: " << std::endl;
+
+    for (const auto& substr : result.second) {
+        std::cout << substr << std::endl;
+    }
 
     return 0;
 }
