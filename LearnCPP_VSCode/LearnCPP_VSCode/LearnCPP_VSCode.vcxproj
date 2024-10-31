@@ -128,18 +128,29 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="0_1_knapsackproblem.cpp" />
+    <ClCompile Include="chain_of_matrix_multiplication.cpp" />
+    <ClCompile Include="check_strings_are_anagrams.cpp" />
+    <ClCompile Include="check_string_has_all_chars_unique.cpp" />
     <ClCompile Include="ClimbingStais_DP_O(1).cpp" />
+    <ClCompile Include="dijkstra_algorithm.cpp" />
     <ClCompile Include="egg_dropping_problem_DP.cpp" />
+    <ClCompile Include="Graph_DFS._recursive.c.pp" />
+    <ClCompile Include="Graph_DFS_using_stack.cpp" />
+    <ClCompile Include="huffman_coding_greedy_approach.cpp" />
     <ClCompile Include="LCS_DP.cpp" />
     <ClCompile Include="longest_common_substring_DP.cpp" />
     <ClCompile Include="maxsum_subarray_DP.cpp" />
+    <ClCompile Include="min_jumps_to_reach_end_of_array.cpp" />
     <ClCompile Include="nth_fibonaccinumber_DP.cpp" />
-    <ClCompile Include="subsetsum.cpp" />
+    <ClCompile Include="remove_duplicates_fromsorted_array.cpp" />
+    <ClCompile Include="remove_duplicate_chars_without_extramemory.cpp" />
+    <ClCompile Include="revesrse_string_without_library_function.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ATMEvents.h" />
     <ClInclude Include="EventHandlers.h" />
     <ClInclude Include="EventPublisher.h" />
+    <ClInclude Include="stub.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
